@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Highlight search using Angularjs : Codeforgeek Demos</title>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+      .highlighted { background: yellow }
+    </style>
+  </head>
+
+  <body ng-app="Demo">
+    <h1>Highlight text using AngularJS.</h1>
+
+    <div class="container" ng-controller="Demo">
+      <input type="text" placeholder="Search" ng-model="search.text"><br><br>
+
+        <!-- with filter -->
+        <div ng-repeat="item in data | filter:search.text"
+            ng-bind-html="item.text | highlight:search.text">
+        </div>
+    </div>
+  </body>
+</html>
